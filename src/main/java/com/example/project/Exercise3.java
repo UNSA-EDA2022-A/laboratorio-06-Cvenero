@@ -31,7 +31,7 @@ public class Exercise3 {
 			return true;
 		}
 		
-		if((actual.left==null && actual.right == null) == (actual.left != null && actual.right != null) ){
+		if((actual.left == null && actual.right == null) == (actual.left != null && actual.right != null) ){
 			return false;
 		}
 		return binario(actual.left) && binario(actual.right);
