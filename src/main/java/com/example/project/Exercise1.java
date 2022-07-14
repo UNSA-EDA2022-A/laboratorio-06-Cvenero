@@ -21,7 +21,25 @@ public class Exercise1 {
 
 
     public <T extends Comparable<T>> boolean bstSimilares(BST<T> a1, BST<T> a2){
+		
+		if(a1.isEmpty()&&a2.isEmpty() || bstSimilares(a1.root,a2.root) ) {
+			return true;
+		}	
+		return false; 
 
-        return false;
-    }
+	}
+	
+	public <T extends Comparable<T>> boolean bstSimilares(Node<T> nodo1, Node<T> nodo2) {
+		
+		if(nodo1 == null &&nodo2 == null) {
+			return true;
+		}
+		
+		if(nodo1 == null && nodo2 !=null || nodo1 != null && nodo2 ==null) {
+			
+			return false;
+		}
+		
+		return bstSimilares(nodo1.left, nodo2.left) && bstSimilares(nodo1.right, nodo2.right);
+	}
 }
