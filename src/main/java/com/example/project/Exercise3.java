@@ -20,6 +20,13 @@ public class Exercise3 {
 
     public <T extends Comparable<T>> boolean bstEstrictamenteBinario(BST<T> a){
 
-        return false;
+        if(actual == null) {
+			return true;
+		}
+		
+		if((actual.left==null && actual.right == null) == (actual.left != null && actual.right != null) ){
+			return false;
+		}
+		return binario(actual.left) && binario(actual.right);
     }
 }
